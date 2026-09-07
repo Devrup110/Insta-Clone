@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark mode styles */
+.dark body {
+  @apply bg-dark-bg text-dark-text;
+}
+
+.dark .card {
+  @apply bg-dark-secondary border-dark-border;
+}
+
+/* Story creation styles */
+.filter-normal { filter: none; }
+.filter-clarendon { filter: contrast(1.2) saturate(1.35); }
+.filter-gingham { filter: brightness(1.05) hue-rotate(-10deg); }
+.filter-moon { filter: grayscale(1) brightness(1.1) contrast(1.1); }
+.filter-lark { filter: brightness(1.1) contrast(0.85) saturate(1.1); }
+.filter-reyes { filter: sepia(0.22) brightness(1.1) contrast(0.85) saturate(0.75); }
+
+/* Infinite scroll animation */
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.loading-pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .font-instagram {
+    font-family: 'Pacifico', cursive;
+  }
+}
